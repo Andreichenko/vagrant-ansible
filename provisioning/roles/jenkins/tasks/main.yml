@@ -1,5 +1,4 @@
 ---
----
 - name: add url jenkins
   get_url: url={{ jenkins_repo_url }} dest=/etc/yum.repos.d/jenkins.repo
 
