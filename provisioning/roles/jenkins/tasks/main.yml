@@ -1,0 +1,14 @@
+---
+---
+- name: add url jenkins
+  get_url: url={{ jenkins_repo_url }} dest=/etc/yum.repos.d/jenkins.repo
+
+- name: import rpm
+  rpm_key: key={{ jenkins_public_key_url }} state=present
+
+- name: jenkins dependencies
+  yum: name={{ item }} state=latest update_cache=yes
+  with_items: '{{ jenkins_packages }}'
+
+- name: install service
+  service: name=jenkins state=started enabled=yes

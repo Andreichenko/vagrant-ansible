@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  roles:
+    - { role: common, tags: common }
+    - { role: java8, tags: java8 }
+    - { role: jenkins, tags: jenkins }
+    - { role: maven, tags: maven }
+    - { role: jenkins-plugins, tags: jenkins-plugins }
