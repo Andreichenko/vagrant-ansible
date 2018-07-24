@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
         vb.cpus = 2
         vb.name = "jenkins"
     end
-
+ # Ansible config
     config.vm.provision "ansible" do |ansible|
         ansible.playbook = "provisioning/install.yml"
         ansible.host_key_checking = false
