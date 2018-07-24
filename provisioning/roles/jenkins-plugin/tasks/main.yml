@@ -1,0 +1,15 @@
+---
+- name: install as admin
+  command: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: data
+
+- name: Install plugins
+  jenkins_plugin:
+    name: "{{ item }}"
+    state: latest
+    params: "{{ jenkins_params }}"
+    url_password: "{{ data.stdout }}"
+  with_items: "{{ jenkins_plugins }}"
+
+- name: restart service jenkins
+  service: name=jenkins state=restarted

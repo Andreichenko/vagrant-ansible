@@ -1,0 +1,13 @@
+#---
+#
+#- name: install Jenkins
+#- hosts: 192.168.33.55
+#- become: yes
+#
+#- tasks:
+#   - name: install appache webserver
+#     yum: name=httpd state=latest
+#
+#   - name: appache and enable it on boot
+#     service: name=httpd state=latest enabled=yes
+   #OLD playbook
