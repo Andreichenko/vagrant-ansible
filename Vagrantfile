@@ -5,6 +5,9 @@ Vagrant.configure("2") do |config|
     config.vm.box = "centos/7"
     config.vm.boot_timeout = 120
     config.vm.hostname = "jenkins"
+    ##### If we use Ubuntu Windows we have a problem with SSH private key. This is a solution
+    #config.ssh.private_key_path = "~/private_key"
+
 
     config.vm.provider "virtualbox" do |vb|
         vb.memory = 2048
